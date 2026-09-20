@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, Expand } from "lucide-react";
 import { Tilt } from "@/components/tilt";
@@ -64,51 +65,53 @@ export function Lightbox({ images }: LightboxProps) {
         ))}
       </div>
 
-      {openIndex !== null && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label="Image viewer"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-port-950/90 p-4 sm:p-10"
-        >
-          <button
-            onClick={() => setOpenIndex(null)}
-            aria-label="Close image viewer"
-            className="absolute right-4 top-4 rounded-full p-2 text-white transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:right-8 sm:top-8"
+      {openIndex !== null &&
+        createPortal(
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Image viewer"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-port-950/90 p-4 sm:p-10"
           >
-            <X className="h-6 w-6" aria-hidden="true" />
-          </button>
+            <button
+              onClick={() => setOpenIndex(null)}
+              aria-label="Close image viewer"
+              className="absolute right-4 top-4 rounded-full p-2 text-white transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:right-8 sm:top-8"
+            >
+              <X className="h-6 w-6" aria-hidden="true" />
+            </button>
 
-          {images.length > 1 && (
-            <>
-              <button
-                onClick={() => setOpenIndex((openIndex - 1 + images.length) % images.length)}
-                aria-label="Previous image"
-                className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full p-2 text-white transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:left-6"
-              >
-                <ChevronLeft className="h-7 w-7" aria-hidden="true" />
-              </button>
-              <button
-                onClick={() => setOpenIndex((openIndex + 1) % images.length)}
-                aria-label="Next image"
-                className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full p-2 text-white transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:right-6"
-              >
-                <ChevronRight className="h-7 w-7" aria-hidden="true" />
-              </button>
-            </>
-          )}
+            {images.length > 1 && (
+              <>
+                <button
+                  onClick={() => setOpenIndex((openIndex - 1 + images.length) % images.length)}
+                  aria-label="Previous image"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full p-2 text-white transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:left-6"
+                >
+                  <ChevronLeft className="h-7 w-7" aria-hidden="true" />
+                </button>
+                <button
+                  onClick={() => setOpenIndex((openIndex + 1) % images.length)}
+                  aria-label="Next image"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full p-2 text-white transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:right-6"
+                >
+                  <ChevronRight className="h-7 w-7" aria-hidden="true" />
+                </button>
+              </>
+            )}
 
-          <div className="relative h-[70vh] w-full max-w-3xl">
-            <Image
-              src={images[openIndex].src}
-              alt={images[openIndex].alt}
-              fill
-              sizes="100vw"
-              className="object-contain"
-            />
-          </div>
-        </div>
-      )}
+            <div className="relative h-[70vh] w-full max-w-3xl">
+              <Image
+                src={images[openIndex].src}
+                alt={images[openIndex].alt}
+                fill
+                sizes="100vw"
+                className="object-contain"
+              />
+            </div>
+          </div>,
+          document.body
+        )}
     </>
   );
 }

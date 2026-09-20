@@ -41,7 +41,7 @@ export function CeoSection({ compact = false, tone = "dark", ctaSlot }: CeoSecti
       <div>
         <span
           className={cx(
-            "font-display text-6xl leading-none",
+            "font-display text-5xl leading-none sm:text-6xl",
             isLight ? "text-clay-400/50" : "text-clay-400/40"
           )}
         >
@@ -49,7 +49,7 @@ export function CeoSection({ compact = false, tone = "dark", ctaSlot }: CeoSecti
         </span>
         <p
           className={cx(
-            "-mt-6 font-display text-2xl italic leading-snug sm:text-[1.75rem]",
+            "mt-1 font-display text-2xl italic leading-snug sm:-mt-4 sm:text-[1.75rem]",
             isLight ? "text-white" : "text-port-900"
           )}
         >

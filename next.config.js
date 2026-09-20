@@ -3,11 +3,16 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     formats: ["image/avif", "image/webp"],
-    // Low cache time in development so replaced images show up almost
-    // immediately after a browser refresh, instead of waiting for the
-    // optimizer's cache to expire. Safe to raise again once the site's
-    // real photos are finalized and won't be swapped often.
-    minimumCacheTTL: 0,
+    // Note: minimumCacheTTL is intentionally left at Next.js's default here.
+    // A very low value (e.g. 0) forces the image optimizer to be invoked
+    // far more often, which is fine for local development but is a bad
+    // idea in production on Vercel: it can lead to individual image
+    // requests occasionally failing or being throttled under normal
+    // browsing. Production doesn't need it anyway — each new deployment
+    // gets a fresh cache automatically, so replaced images always show up
+    // correctly once you redeploy. If images seem slow to update while
+    // running `npm run dev` locally, do a hard refresh (Ctrl/Cmd+Shift+R)
+    // instead of changing this value.
   },
 };
 

@@ -13,6 +13,7 @@ interface RevealProps {
 export function Reveal({ children, delay = 0, className, as = "div" }: RevealProps) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
+  const [settled, setSettled] = useState(false);
 
   useEffect(() => {
     const node = ref.current;
@@ -24,6 +25,7 @@ export function Reveal({ children, delay = 0, className, as = "div" }: RevealPro
 
     if (prefersReducedMotion) {
       setVisible(true);
+      setSettled(true);
       return;
     }
 
@@ -47,9 +49,18 @@ export function Reveal({ children, delay = 0, className, as = "div" }: RevealPro
     <Tag
       ref={ref as never}
       style={{ animationDelay: visible ? `${delay}ms` : undefined }}
+      onAnimationEnd={() => setSettled(true)}
       className={cx(
-        "opacity-0",
-        visible && "animate-fade-up",
+        // Once the reveal animation finishes, drop the animate-fade-up
+        // class entirely rather than leaving it applied. A CSS transform
+        // left on an element (even the animation's resting transform:
+        // translateY(0) scale(1)) turns that element into the positioning
+        // anchor for any `position: fixed` descendant instead of the
+        // viewport — which breaks fullscreen overlays like the image
+        // lightbox on smaller screens. Settling back to a plain, static
+        // class avoids that entirely.
+        settled ? "opacity-100" : "opacity-0",
+        visible && !settled && "animate-fade-up",
         className
       )}
     >
