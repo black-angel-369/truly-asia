@@ -75,11 +75,11 @@ export function Hero() {
       <div className="relative z-10 mx-auto -mt-16 w-[92%] max-w-4xl px-0 sm:-mt-14">
         <Tilt strength={3} className="grid grid-cols-3 divide-x divide-white/10 rounded-2xl border-2 border-white/15 bg-port-900 shadow-lifted">
           {facts.map((fact) => (
-            <div key={fact.label} className="px-4 py-6 text-center sm:px-8 sm:py-8">
-              <p className="font-display text-2xl font-semibold text-white sm:text-3xl">
+            <div key={fact.label} className="min-w-0 px-2 py-5 text-center sm:px-8 sm:py-8">
+              <p className="break-words font-display text-lg font-semibold leading-tight text-white sm:text-2xl lg:text-3xl">
                 {fact.value}
               </p>
-              <p className="mt-1 text-xs text-sand-100/60 sm:text-sm">{fact.label}</p>
+              <p className="mt-1 text-[11px] leading-snug text-sand-100/60 sm:text-sm">{fact.label}</p>
             </div>
           ))}
         </Tilt>
