@@ -29,7 +29,7 @@ export const products: Product[] = [
     imageAlt: "Broomsticks imported from Indonesia by Truly Asia Global Trade",
     gallery: [
       { src: "/images/products/broomsticks.jpg", alt: "Broomsticks, front view" },
-      { src: "/images/products/broomsticks-2.jpg", alt: "Broomsticks, detail view" },
+      { src: "/images/products/broomsticks-2.jpg", alt: "Broomstick bundles stocked in the warehouse" },
     ],
     whatsappMessage:
       "Hello Truly Asia Global Trade, I am interested in wholesale supply of your broomsticks. Please share the current details and availability.",
