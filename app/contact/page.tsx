@@ -130,6 +130,7 @@ export default function ContactPage() {
               <WhatsAppButton
                 phone={company.whatsapp[0].international}
                 message="Hello Truly Asia Global Trade, I would like to discuss wholesale supply."
+                variant="whatsapp"
                 size="lg"
                 className="shrink-0"
               >
