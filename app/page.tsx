@@ -4,13 +4,11 @@ import { Compass, ShieldCheck, Handshake, Globe2 } from "lucide-react";
 import { Hero } from "@/components/hero";
 import { SectionHeading } from "@/components/section-heading";
 import { CtaButton } from "@/components/cta-button";
-import { WhatsAppButton } from "@/components/whatsapp-button";
 import { ProductCard } from "@/components/product-card";
 import { CeoSection } from "@/components/ceo-section";
 import { Reveal } from "@/components/reveal";
 import { Tilt } from "@/components/tilt";
 import { featuredProduct, otherProducts } from "@/data/products";
-import { company } from "@/data/company";
 
 const pillars = [
   {
@@ -153,15 +151,6 @@ export default function HomePage() {
               <p className="mt-5 max-w-lg text-base leading-relaxed text-sand-100/75">
                 {featuredProduct.description}
               </p>
-              <div className="mt-8">
-                <WhatsAppButton
-                  phone={company.whatsapp[0].international}
-                  message={featuredProduct.whatsappMessage}
-                  size="lg"
-                >
-                  Wholesale Inquiry
-                </WhatsAppButton>
-              </div>
             </Reveal>
             <Reveal delay={80} className="order-1 lg:order-2">
               <Tilt strength={4} className="mx-auto max-w-md lg:max-w-none">
