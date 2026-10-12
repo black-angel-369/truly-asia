@@ -33,6 +33,10 @@ const config: Config = {
           700: "#3B382F",
           500: "#6B6759",
         },
+        whatsapp: {
+          DEFAULT: "#25D366",
+          dark: "#1DA851",
+        },
       },
       fontFamily: {
         display: ["var(--font-fraunces)", "serif"],
