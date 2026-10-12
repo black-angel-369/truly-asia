@@ -96,7 +96,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
             )}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex w-full items-center justify-center rounded-full bg-whatsapp px-5 py-3 font-body text-sm font-semibold tracking-wide text-white transition-colors hover:bg-whatsapp-dark"
+            className="flex w-full items-center justify-center rounded-full bg-blue-600 px-5 py-3 font-body text-sm font-semibold tracking-wide text-white transition-colors hover:bg-blue-700"
           >
             WhatsApp Us
           </a>
