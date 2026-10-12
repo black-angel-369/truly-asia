@@ -1,9 +1,8 @@
 import Image from "next/image";
 import { CtaButton } from "@/components/cta-button";
-import { WhatsAppButton } from "@/components/whatsapp-button";
 import { RouteLine } from "@/components/route-line";
 import { Tilt } from "@/components/tilt";
-import { company, defaultWhatsAppMessage } from "@/data/company";
+import { company } from "@/data/company";
 
 const facts = [
   { value: company.founded, label: "Founded" },
@@ -58,14 +57,6 @@ export function Hero() {
               >
                 Contact Us
               </CtaButton>
-              <WhatsAppButton
-                phone={company.whatsapp[0].international}
-                message={defaultWhatsAppMessage}
-                variant="ghost"
-                className="!px-0"
-              >
-                Chat on WhatsApp
-              </WhatsAppButton>
             </div>
           </div>
         </div>

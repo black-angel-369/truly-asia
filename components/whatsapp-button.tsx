@@ -26,14 +26,14 @@ export function WhatsAppButton({
       target="_blank"
       rel="noopener noreferrer"
       className={cx(
-        "group inline-flex items-center justify-center gap-2 rounded-full font-body font-semibold tracking-wide transition-[transform,background-color,border-color,color] duration-200 will-change-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-whatsapp",
+        "group inline-flex items-center justify-center gap-2 rounded-full font-body font-semibold tracking-wide transition-[transform,background-color,border-color,color] duration-200 will-change-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500",
         size === "lg" ? "px-7 py-3.5 text-base" : "px-5 py-2.5 text-sm",
         variant === "solid" &&
-          "bg-whatsapp text-white hover:bg-whatsapp-dark hover:shadow-lifted active:bg-whatsapp-dark",
+          "bg-blue-600 text-white hover:bg-blue-700 hover:shadow-lifted active:bg-blue-800",
         variant === "outline" &&
-          "border border-whatsapp text-whatsapp hover:bg-whatsapp hover:text-white",
+          "border border-blue-500 text-blue-400 hover:bg-blue-600 hover:text-white",
         variant === "ghost" &&
-          "text-whatsapp hover:text-white",
+          "text-blue-400 hover:text-blue-300",
         className
       )}
     >

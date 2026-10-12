@@ -266,13 +266,6 @@ export default function HomePage() {
             availability, and sourcing opportunities.
           </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
-            <WhatsAppButton
-              phone={company.whatsapp[0].international}
-              message="Hello Truly Asia Global Trade, I would like to discuss wholesale supply."
-              size="lg"
-            >
-              WhatsApp Us
-            </WhatsAppButton>
             <CtaButton href="/contact" variant="outline-light" size="lg">
               Contact Us
             </CtaButton>
