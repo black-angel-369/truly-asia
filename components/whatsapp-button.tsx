@@ -33,7 +33,7 @@ export function WhatsAppButton({
         variant === "whatsapp" &&
           "bg-whatsapp text-white hover:bg-whatsapp-dark hover:shadow-lifted active:bg-whatsapp-dark",
         variant === "outline" &&
-          "border border-blue-500 text-blue-400 hover:bg-blue-600 hover:text-white",
+          "border border-whatsapp text-whatsapp hover:bg-whatsapp hover:text-white",
         variant === "ghost" &&
           "text-blue-400 hover:text-blue-300",
         className

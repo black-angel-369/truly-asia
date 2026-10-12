@@ -122,6 +122,7 @@ export default function ProductsPage() {
                         <WhatsAppButton
                           phone={company.whatsapp[0].international}
                           message={product.whatsappMessage}
+                          variant="whatsapp"
                           size="lg"
                         >
                           Request Wholesale Information
