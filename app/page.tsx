@@ -68,10 +68,10 @@ export default function HomePage() {
             <Tilt strength={4} className="group relative aspect-[4/3] overflow-hidden rounded-2xl border-2 border-white/15">
               <Image
                 src="/images/hero/hero-secondary.jpg"
-                alt="Truly Asia Global Trade sourcing and logistics"
+                alt="Truly Asia Global Trade office building in Peshawar"
                 fill
                 sizes="(min-width: 1024px) 45vw, 100vw"
-                className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                className="object-cover object-[center_70%] transition-transform duration-500 ease-out group-hover:scale-105"
               />
             </Tilt>
           </Reveal>
