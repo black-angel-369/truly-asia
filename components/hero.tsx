@@ -62,7 +62,7 @@ export function Hero() {
                 phone={company.whatsapp[0].international}
                 message={defaultWhatsAppMessage}
                 variant="ghost"
-                className="!px-0 !text-clay-300 hover:!text-clay-200"
+                className="!px-0"
               >
                 Chat on WhatsApp
               </WhatsAppButton>

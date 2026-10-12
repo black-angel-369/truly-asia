@@ -106,7 +106,7 @@ export function Navbar() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-clay-500 px-5 py-2.5 font-body text-sm font-semibold tracking-wide text-white transition-colors hover:bg-clay-600"
+              className="rounded-full bg-whatsapp px-5 py-2.5 font-body text-sm font-semibold tracking-wide text-white transition-colors hover:bg-whatsapp-dark"
             >
               WhatsApp Us
             </a>
